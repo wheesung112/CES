@@ -7,7 +7,12 @@ public class FolderHover : MonoBehaviour
     bool canDrag = false;
     bool isDragging = false;
     Vector3 offset;
-    Vector3 startPosition;
+    Vector3 startPosition; 
+    private float lastClickTime = 0;
+    private float doubleClickTimeThreshold = 0.2f;
+
+    bool isPassibleOpen = false;
+   
     private void Start()
     {
         startPosition = transform.position;
@@ -17,11 +22,23 @@ public class FolderHover : MonoBehaviour
     {
         
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0))
+        {
+            float currentTime = Time.time;
+            if (currentTime - lastClickTime < doubleClickTimeThreshold)
+            {
+                OnDoubleClick();
+            }
+
+            // 마지막 클릭 시간 갱신
+            lastClickTime = currentTime;
+        }
     }
     
     private void OnMouseUp()
     {
         transform.position = startPosition;
+        if (isPassibleOpen) OpenFolderData();
     }
     void OnMouseEnter()
     {
@@ -50,6 +67,23 @@ public class FolderHover : MonoBehaviour
     }
     void Update()
     {
-      
+        
+    }
+    void OnDoubleClick()
+    {
+        Debug.Log( transform.name + "더블 클릭");
+    }
+
+    public void isPassibleOpenFolder(bool isopened)
+    {
+        isPassibleOpen = isopened;
+    }
+    public void OpenFolderData()
+    {
+        Debug.Log($"{transform.name} 폴더 열기");
+    }
+    public void CloseFolderData()
+    {
+        Debug.Log($"{transform.name} 폴더 닫기");
     }
 }

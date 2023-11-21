@@ -19,9 +19,9 @@ public class RaycastPoint : MonoBehaviour
      
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        LayerMask layerMask = LayerMask.GetMask("Ignore Raycast");
 
-
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit,500,~layerMask))
         {
             //hit.collider.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 0.2f);            
             //Debug.Log("충돌한 물체: " + hit.collider.gameObject.name);
