@@ -7,7 +7,7 @@ public class FolderHover : MonoBehaviour
     bool canDrag = false;
     bool isDragging = false;
     Vector3 offset;
-    Vector3 startPosition; 
+    Vector3 startPosition;
     private float lastClickTime = 0;
     private float doubleClickTimeThreshold = 0.2f;
 
@@ -16,7 +16,7 @@ public class FolderHover : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
-        print(startPosition);
+        //print(startPosition);
     }
     void OnMouseDown()
     {
@@ -38,20 +38,21 @@ public class FolderHover : MonoBehaviour
     private void OnMouseUp()
     {
         transform.position = startPosition;
+        transform.rotation = new Quaternion(0,0,0,0);
         if (isPassibleOpen) OpenFolderData();
     }
     void OnMouseEnter()
     {
         canDrag = true;
         //Debug.Log("들어감");
-        transform.localScale = new Vector3(1.5f, 1.5f, 0.2f);
+        transform.localScale = new Vector3(1.5f, 1.5f, 1f);
     }
 
     void OnMouseExit()
     {
         //Debug.Log("나감");
         canDrag = false;
-        transform.localScale = new Vector3(1, 1, 0.2f);
+        transform.localScale = new Vector3(1, 1, 1f);
         
     }
     private void OnMouseDrag()
@@ -59,11 +60,18 @@ public class FolderHover : MonoBehaviour
         float distance = Camera.main.WorldToScreenPoint(transform.position).z;
 
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
+        print(distance);
         Vector3 objPos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        objPos.z = 0;
+        //objPos.z = 0;
         //objPos.x = 0;
+
+        // 첫 번째 대상에 회전값 적용
+
+        transform.LookAt(Camera.main.transform);
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y - 90f, 0);
         transform.position = objPos;
+        //transform.localPosition = objPos;
     }
     void Update()
     {

@@ -21,6 +21,7 @@ public class RaycastPoint : MonoBehaviour
         RaycastHit hit;
         LayerMask layerMask = LayerMask.GetMask("Ignore Raycast");
 
+
         if (Physics.Raycast(ray, out hit,500,~layerMask))
         {
             //hit.collider.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 0.2f);            
