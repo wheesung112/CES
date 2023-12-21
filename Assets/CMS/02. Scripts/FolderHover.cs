@@ -18,7 +18,7 @@ public class FolderHover : MonoBehaviour
         startPosition = transform.position;
         //print(startPosition);
     }
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -34,28 +34,28 @@ public class FolderHover : MonoBehaviour
             lastClickTime = currentTime;
         }
     }
-    
-    private void OnMouseUp()
+
+    public void OnMouseUp()
     {
         transform.position = startPosition;
         transform.rotation = new Quaternion(0,0,0,0);
         if (isPassibleOpen) OpenFolderData();
     }
-    void OnMouseEnter()
+    public void OnMouseEnter()
     {
         canDrag = true;
         //Debug.Log("들어감");
-        transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+        transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
     }
 
-    void OnMouseExit()
+    public void OnMouseExit()
     {
         //Debug.Log("나감");
         canDrag = false;
         transform.localScale = new Vector3(1, 1, 1f);
         
     }
-    private void OnMouseDrag()
+    public void OnMouseDrag()
     {
         float distance = Camera.main.WorldToScreenPoint(transform.position).z;
 
@@ -93,5 +93,14 @@ public class FolderHover : MonoBehaviour
     public void CloseFolderData()
     {
         Debug.Log($"{transform.name} 폴더 닫기");
+    }
+
+    public void TestEnter()
+    {
+        print("Test Out");
+    }
+    public void TestOut()
+    {
+        print("Test Out");
     }
 }
