@@ -27,13 +27,16 @@ public class DrawingMarker : MonoBehaviour
 
     void Update()
     {
+        //Debug.DrawRay(_tip.position, transform.up * 500, Color.red);
         Draw();
     }
 
     private void Draw()
     {
+        //πÊ«‚ -transform.up
         if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight))
         {
+            
             if (_touch.transform.CompareTag("Drawing"))
             {
                 if (_whiteboard == null)
@@ -73,5 +76,10 @@ public class DrawingMarker : MonoBehaviour
 
         _whiteboard = null;
         _touchedLastFrame = false;
+    }
+
+    public void SetPenSize(int size)
+    {
+        _penSize = size;
     }
 }
