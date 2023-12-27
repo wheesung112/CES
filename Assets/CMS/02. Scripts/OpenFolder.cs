@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class OpenFolder : MonoBehaviour
+public class OpenFolder : XRSocketInteractor
 {
-    private void OnTriggerEnter(Collider other)
+    public List<GameObject> Hierarchy;
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        print(other.transform.name);
-        other.GetComponent<FolderHover>().isPassibleOpenFolder(true);
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        other.GetComponent<FolderHover>().isPassibleOpenFolder(false);
-    }
 
-    private void OnCollisionEnter(Collision collision)
+        // snap된 오브젝트의 이름 가져오기
+        string snappedObjectName = args.interactable.name;
+
+        // Attach Transform 가져오기
+        for(int i = 0; i < Hierarchy.Count; i++)
+        {
+            string conts = Hierarchy[i].name.Split("_")[0];
+            Hierarchy[i].SetActive(snappedObjectName.Contains(conts));
+        }
+        Debug.Log("Snapped Object Name: " + snappedObjectName);
+    }
+    protected override void OnSelectExited(SelectExitEventArgs args)
     {
-        print(collision.transform.name);
+        for (int i = 0; i < Hierarchy.Count; i++)
+        {
+            Hierarchy[i].SetActive(false);
+        }
+        
     }
 }

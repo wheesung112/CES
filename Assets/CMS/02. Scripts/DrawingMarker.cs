@@ -42,6 +42,10 @@ public class DrawingMarker : MonoBehaviour
                 if (_whiteboard == null)
                 {
                     _whiteboard = _touch.transform.GetComponent<Drawing>();
+                    //Texture2D newTexture = new Texture2D(_whiteboard.texture.width, _whiteboard.texture.height, TextureFormat.RGBA32, false);
+                    //newTexture.SetPixels(_whiteboard.texture.GetPixels());
+                    //newTexture.Apply();
+                    //_whiteboard.texture = newTexture;
                 }
 
                 _touchPos = new Vector2(_touch.textureCoord.x, _touch.textureCoord.y);
