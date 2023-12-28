@@ -10249,7 +10249,6 @@ GameObject:
   - component: {fileID: 1857630002476480565}
   - component: {fileID: 1444205142881811549}
   - component: {fileID: 8563266316061046440}
-  - component: {fileID: 8563266316061046439}
   m_Layer: 0
   m_Name: ButtonVisual
   m_TagString: Untagged
@@ -12872,7 +12871,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf208c87c03f53f4c8bcc8e5f9b9d509, type: 2}
+  - {fileID: 2100000, guid: 35f1dcffbdeb51346bfba3c35cc53d0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13159,33 +13158,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pokeInteractable: {fileID: 4119247283606734356}
   _buttonBaseTransform: {fileID: 8640878885045191303}
---- !u!114 &8563266316061046439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6748960160960001194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 2a0032714ddcc3b4cb2a27b69aee4650, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9b5f3eb3131f49a4ea103b3266d6b098, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!222 &8563266316061046440
 CanvasRenderer:
   m_ObjectHideFlags: 0
