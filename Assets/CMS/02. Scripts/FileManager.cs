@@ -45,7 +45,16 @@ public class FileManager : MonoBehaviour
         transform.rotation = startTransform.rotation;
         print("Dis Selected");
     }
-
+    public void RotSelect()
+    {
+        transform.localRotation = Quaternion.Euler(0,180,0);
+        print("Set Rot select : " + transform.localRotation.eulerAngles);
+    }
+    public void RotDisSelect()
+    {
+        //transform.localRotation = Quaternion.Euler(0,0,0);
+        //print("Set Rot diselect : " + transform.localRotation.eulerAngles);
+    }
     void Start()
     {
         startTransform = transform;

@@ -1,35 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using PaintIn3D;
 using UnityEngine;
 
 public class PenInputs : MonoBehaviour
 {
-    public DrawingMarker everPen;
+    public CwPaintSphere pen;
     void Update()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            everPen.SetPenSize(5);
+            pen.Radius = 0.003f;
             Debug.Log("A 키를 눌렀습니다.");
         }
         else if (Input.GetKey(KeyCode.B))
         {
-            everPen.SetPenSize(7);
+            pen.Radius = 0.01f;
             Debug.Log("B 키를 눌렀습니다.");
         }
         else if (Input.GetKey(KeyCode.C))
         {
-            everPen.SetPenSize(9);
+            pen.Radius = 0.1f;
             Debug.Log("C 키를 눌렀습니다.");
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            everPen.SetPenSize(11);
+            pen.Radius = 0.3f;
             Debug.Log("D 키를 눌렀습니다.");
         }
         else if (Input.GetKey(KeyCode.E))
         {
-            everPen.SetPenSize(13);
+            pen.Radius = 1f;
             Debug.Log("E 키를 눌렀습니다.");
         }
 
