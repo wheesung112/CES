@@ -3,7 +3,12 @@ guid: dac5533ad74f69f479b0dd4a648589bd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_BannerRightTransparentBlack
+    second: {fileID: 2100000, guid: 6660bce32fc09c0498a35dd05d0f2ca1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
