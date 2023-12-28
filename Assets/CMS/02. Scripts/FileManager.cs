@@ -31,9 +31,10 @@ public class FileManager : MonoBehaviour
     public void FolderSelected()
     {
         isGrab = true;
-        transform.LookAt(rightController);
-        transform.rotation *= Quaternion.Euler(0,180,0);
-        print("Selected");
+        transform.rotation = new Quaternion(0, 0, 0, 0);
+        //transform.LookAt(rightController);
+        //transform.rotation *= Quaternion.Euler(0,180,0);
+        print("Selected" + transform.name);
     }
 
     public void FolderDisSelected()

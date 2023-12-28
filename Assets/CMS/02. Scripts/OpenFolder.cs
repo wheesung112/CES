@@ -11,9 +11,9 @@ public class OpenFolder : XRSocketInteractor
 
         // snap된 오브젝트의 이름 가져오기
         string snappedObjectName = args.interactable.name;
-
+        args.interactable.GetComponent<AnimController>().StartAnim();
         // Attach Transform 가져오기
-        for(int i = 0; i < Hierarchy.Count; i++)
+        for (int i = 0; i < Hierarchy.Count; i++)
         {
             string conts = Hierarchy[i].name.Split("_")[0];
             Hierarchy[i].SetActive(snappedObjectName.Contains(conts));
@@ -22,6 +22,7 @@ public class OpenFolder : XRSocketInteractor
     }
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
+        args.interactable.GetComponent<AnimController>().CloseAnim();
         for (int i = 0; i < Hierarchy.Count; i++)
         {
             Hierarchy[i].SetActive(false);
