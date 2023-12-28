@@ -1360,7 +1360,7 @@ Light:
   m_GameObject: {fileID: 605727020}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -1422,7 +1422,7 @@ Transform:
   m_GameObject: {fileID: 605727020}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0.1397, y: 1.3749, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5447,7 +5447,7 @@ MonoBehaviour:
   _editor: {fileID: 1474002849722621678}
   _colorShaderPropertyName: _Color
   _normalColorState:
-    Color: {r: 1, g: 1, b: 1, a: 0.14117648}
+    Color: {r: 1, g: 1, b: 1, a: 0.69803923}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -5474,7 +5474,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 1, g: 1, b: 1, a: 0.4509804}
+    Color: {r: 1, g: 1, b: 1, a: 0.8}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -5501,7 +5501,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _selectColorState:
-    Color: {r: 1, g: 1, b: 1, a: 0.8392157}
+    Color: {r: 1, g: 1, b: 1, a: 1}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -6185,7 +6185,7 @@ MonoBehaviour:
   _editor: {fileID: 1474002850257127715}
   _colorShaderPropertyName: _Color
   _normalColorState:
-    Color: {r: 1, g: 1, b: 1, a: 0.14117648}
+    Color: {r: 1, g: 1, b: 1, a: 0.7019608}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -6212,7 +6212,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 1, g: 1, b: 1, a: 0.4509804}
+    Color: {r: 1, g: 1, b: 1, a: 0.8039216}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -6239,7 +6239,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _selectColorState:
-    Color: {r: 1, g: 1, b: 1, a: 0.8392157}
+    Color: {r: 1, g: 1, b: 1, a: 1}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -6653,7 +6653,7 @@ MonoBehaviour:
   _editor: {fileID: 1474002850257127715}
   _width: 1
   _height: 1
-  _color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _borderColor: {r: 0, g: 0, b: 0, a: 1}
   _radiusTopLeft: 0.3
   _radiusTopRight: 0.3
@@ -6676,7 +6676,7 @@ MonoBehaviour:
   _editor: {fileID: 1474002849722621678}
   _width: 1
   _height: 1
-  _color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _borderColor: {r: 0, g: 0, b: 0, a: 1}
   _radiusTopLeft: 0.3
   _radiusTopRight: 0.3
