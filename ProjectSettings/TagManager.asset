@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Drawing
+  - DeformingObject
+  - StaticObject
   layers:
   - Default
   - TransparentFX
