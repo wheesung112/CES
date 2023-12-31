@@ -3,7 +3,12 @@ guid: 65857365bee5870459cd18b6b5f6710f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_DeskTransparent
+    second: {fileID: 2100000, guid: eaa076be90d2b5f41bcff7883f458957, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
