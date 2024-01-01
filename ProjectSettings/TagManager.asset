@@ -7,6 +7,7 @@ TagManager:
   - Drawing
   - DeformingObject
   - StaticObject
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - notShowing
   - Files
-  - 
+  - Grabbable
   - 
   - 
   - 

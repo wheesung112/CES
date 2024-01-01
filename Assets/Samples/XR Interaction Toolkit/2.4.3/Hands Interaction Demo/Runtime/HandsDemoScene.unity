@@ -16453,7 +16453,7 @@ PrefabInstance:
     - target: {fileID: 5878849512590031469, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
       propertyPath: m_HandMeshMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 4a41865c326fb9f459039a630406649f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6287973505931502276, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
       propertyPath: m_InteractionManager
       value: 

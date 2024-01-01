@@ -8,8 +8,8 @@ public class FileManager : MonoBehaviour
     //파일 리스트 내용
     //지금은 Resources에 넣어서 할 예정 -> 추후엔 파일 시스템 구축 필요
     public List<string> filePath;
-    public Transform rightController;
-    public Transform leftController;
+    //public Transform rightController;
+    //public Transform leftController;
     public float smoothSpeed = 2.0f;
 
     bool canDrag = false;
