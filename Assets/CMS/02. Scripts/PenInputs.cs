@@ -21,40 +21,66 @@ public class PenInputs : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.Alpha0))
+        {
+            pen.Radius = 0f;
+        }
+        else if (Input.GetKey(KeyCode.Alpha1))
         {
             pen.Radius = 0.003f;
-            Debug.Log("A 키를 눌렀습니다.");
+            
         }
-        else if (Input.GetKey(KeyCode.B))
+        else if (Input.GetKey(KeyCode.Alpha2))
         {
-            pen.Radius = 0.01f;
-            Debug.Log("B 키를 눌렀습니다.");
+            pen.Radius = 0.005f;
+            
         }
-        else if (Input.GetKey(KeyCode.C))
+        else if (Input.GetKey(KeyCode.Alpha3))
         {
-            pen.Radius = 0.1f;
-            Debug.Log("C 키를 눌렀습니다.");
+            pen.Radius = 0.008f;
+            
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.Alpha4))
         {
-            pen.Radius = 0.3f;
-            Debug.Log("D 키를 눌렀습니다.");
+            pen.Radius = 0.010f;
+            
         }
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetKey(KeyCode.Alpha5))
         {
-            pen.Radius = 1f;
-            Debug.Log("E 키를 눌렀습니다.");
+            pen.Radius = 0.013f;
+            
+        }
+        else if (Input.GetKey(KeyCode.Alpha6))
+        {
+            pen.Radius = 0.016f;
+            
+        }
+        else if (Input.GetKey(KeyCode.Alpha7))
+        {
+            pen.Radius = 0.019f;
+            
+        }
+        else if (Input.GetKey(KeyCode.Alpha8))
+        {
+            pen.Radius = 0.02f;
+            
+        }
+        else if (Input.GetKey(KeyCode.Alpha9))
+        {
+            pen.Radius = 0.025f;
+            
         }
 
         //푸시
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
             Debug.Log("Ctrl 키가 눌린 상태입니다.");
+           
         }
-        else if (Input.GetKeyUp(KeyCode.LeftAlt) || Input.GetKeyUp(KeyCode.RightAlt))
+        else  if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
         {
             Debug.Log("Ctrl 키가 눌린 상태에서 Alt 키가 떼어진 상태입니다.");
+           
         }
 
         //센서 1
@@ -63,7 +89,7 @@ public class PenInputs : MonoBehaviour
             Debug.Log("P 키가 눌린 상태입니다.");
             isGrabed1 = true;
         }
-        else if (Input.GetKeyUp(KeyCode.L))
+        else if (Input.GetKey(KeyCode.L))
         {
             Debug.Log("P 키가 눌린 상태에서 L 키가 떼어진 상태입니다.");
             isGrabed1 = false;
@@ -74,7 +100,7 @@ public class PenInputs : MonoBehaviour
             Debug.Log("O 키가 눌린 상태입니다.");
             isGrabed2 = true;
         }
-        else if (Input.GetKeyUp(KeyCode.K))
+        else  if (Input.GetKey(KeyCode.K))
         {
             Debug.Log("O 키가 눌린 상태에서 K 키가 떼어진 상태입니다.");
             isGrabed2 = false;
@@ -85,7 +111,7 @@ public class PenInputs : MonoBehaviour
             Debug.Log("I 키가 눌린 상태입니다.");
             isGrabed3 = true;
         }
-        else if (Input.GetKeyUp(KeyCode.J))
+        else if (Input.GetKey(KeyCode.J))
         {
             Debug.Log("L 키가 눌린 상태에서 J 키가 떼어진 상태입니다.");
             isGrabed3 = false;
@@ -94,7 +120,7 @@ public class PenInputs : MonoBehaviour
         if(isGrabed1 || isGrabed2 || isGrabed3)
         {
             transform.GetComponent<MeshRenderer>().enabled = true;
-            transform.position = SnapTransform.position + new Vector3(-0.02f,0,0);
+            transform.position = SnapTransform.position + new Vector3(0,0,0);
             
         }
         else

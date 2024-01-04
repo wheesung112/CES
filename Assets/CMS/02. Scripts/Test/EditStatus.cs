@@ -8,6 +8,8 @@ public class EditStatus : MonoBehaviour
     public GameObject stage;
     Vector3 currentPosit;
     float currentrotate;
+    public float moveAmount = 0.02f;
+    public float rotAmount = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +61,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagez"))
         {
-            currentPosit.z += 0.05f;
+            currentPosit.z += moveAmount;
             PlayerPrefs.SetFloat("stagez", currentPosit.z);
             stage.transform.position = currentPosit;
         }
@@ -68,7 +70,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagez"))
         {
-            currentPosit.z -= 0.05f;
+            currentPosit.z -= moveAmount;
             PlayerPrefs.SetFloat("stagez", currentPosit.z);
             stage.transform.position = currentPosit;
         }
@@ -77,7 +79,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagex"))
         {
-            currentPosit.x += 0.05f;
+            currentPosit.x += moveAmount;
             PlayerPrefs.SetFloat("stagex", currentPosit.x);
             stage.transform.position = currentPosit;
         }
@@ -86,7 +88,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagex"))
         {
-            currentPosit.x -= 0.05f;
+            currentPosit.x -= moveAmount;
             PlayerPrefs.SetFloat("stagex", currentPosit.x);
             stage.transform.position = currentPosit;
         }
@@ -95,7 +97,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagey"))
         {
-            currentPosit.y += 0.05f;
+            currentPosit.y += moveAmount;
             PlayerPrefs.SetFloat("stagey", currentPosit.y);
             stage.transform.position = currentPosit;
         }
@@ -104,7 +106,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagey"))
         {
-            currentPosit.y -= 0.05f;
+            currentPosit.y -= moveAmount;
             PlayerPrefs.SetFloat("stagey", currentPosit.y);
             stage.transform.position = currentPosit;
         }
@@ -113,7 +115,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("rotate"))
         {
-            currentrotate += 5f;
+            currentrotate += rotAmount;
             PlayerPrefs.SetFloat("rotate", currentrotate);
             Quaternion newRotation = Quaternion.Euler(0f, currentrotate, 0f);
             stage.transform.rotation = newRotation;
@@ -123,7 +125,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("rotate"))
         {
-            currentrotate -= 5f;
+            currentrotate -= rotAmount;
             PlayerPrefs.SetFloat("rotate", currentrotate);
             Quaternion newRotation = Quaternion.Euler(0f, currentrotate, 0f);
             stage.transform.rotation = newRotation;

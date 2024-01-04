@@ -5,23 +5,28 @@ using UnityEngine;
 public class AttachObject : MonoBehaviour
 {
     private bool isAttached = false;
-    bool isfloored = false;
+    bool isFloored = false;
+
     public void setFloored(bool floor)
     {
-        isfloored = floor;
+        isFloored = floor;
     }
+
     public bool getFloored()
     {
-        return isfloored;
+        return isFloored;
     }
+
     public void setAttached(bool floor)
     {
         isAttached = floor;
     }
+
     public bool getAttached()
     {
         return isAttached;
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -35,14 +40,18 @@ public class AttachObject : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Vector3 targetPosition = hit.point;
-                if (isfloored)
+                if (isFloored)
                     targetPosition.y += 0.001f;
                 else
                     targetPosition.z += 0.001f;
 
+                // 회전 값 가져오기
+                //Quaternion targetRotation = Quaternion.LookRotation(hit.normal);
+
+                // 이동 및 회전 적용
                 transform.position = targetPosition;
-                //transform.rotation = Quaternion.LookRotation(hit.normal);
-                
+                //transform.rotation = targetRotation;
+
                 isAttached = true;
             }
         }
@@ -51,18 +60,5 @@ public class AttachObject : MonoBehaviour
     public void SelectExited()
     {
         isAttached = false;
-        //RaycastHit hit;
-        //Ray ray = new Ray(transform.position, -transform.up);
-
-        //if (Physics.Raycast(ray, out hit))
-        //{
-        //    Vector3 targetPosition = hit.point;
-        //    if (isfloored)
-        //        targetPosition.y += 0.001f;
-        //    else
-        //        targetPosition.z += 0.001f;
-
-        //    transform.position = targetPosition;
-        //}
     }
 }

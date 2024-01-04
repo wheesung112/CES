@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ColliderRot : MonoBehaviour
 {
+    public Transform StageStatus;
     public bool isfloor = false;
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,14 +16,14 @@ public class ColliderRot : MonoBehaviour
 
         if (isfloor && !objectStatus)
         {
-            collision.transform.rotation = Quaternion.Euler(0, 180, 0);
+            collision.transform.rotation = Quaternion.Euler(0, 180, 0)* StageStatus.rotation;
             attachedObject.setFloored(true);
             print("floor Coll");
         }
         else if(isfloor && objectStatus) { return; }
         else 
         {
-            collision.transform.rotation = Quaternion.Euler(90, 0, 180);
+            collision.transform.rotation = Quaternion.Euler(90, StageStatus.rotation.eulerAngles.y, 180);
             attachedObject.setFloored(false);
             print("wall Coll");
         }
