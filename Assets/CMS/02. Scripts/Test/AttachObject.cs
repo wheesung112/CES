@@ -26,7 +26,32 @@ public class AttachObject : MonoBehaviour
     {
         return isAttached;
     }
+    private void Awake()
+    {
+        if (!isAttached)
+        {
+            RaycastHit hit;
+            Ray ray = new Ray(transform.position, -transform.up);
 
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 targetPosition = hit.point;
+                if (isFloored)
+                    targetPosition.y += 0.001f;
+                else
+                    targetPosition.z += 0.001f;
+
+                // 회전 값 가져오기
+                //Quaternion targetRotation = Quaternion.LookRotation(hit.normal);
+
+                // 이동 및 회전 적용
+                transform.position = targetPosition;
+                //transform.rotation = targetRotation;
+
+                isAttached = true;
+            }
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

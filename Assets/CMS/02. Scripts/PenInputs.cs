@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using PaintIn3D;
 using UnityEngine;
-
+using UnityEngine.XR.Interaction.Toolkit;
 
 
 public class PenInputs : MonoBehaviour
 {
-    
+   
     public CwPaintSphere pen;
     public Transform SnapTransform;
     public Transform RightHand;
+    public Transform penPoint;
     bool isGrabed1 = false;
     bool isGrabed2 = false;
     bool isGrabed3 = false;
-    
-    
+
+    //RayAndLineRenderer ral;
+
     private void Start()
     {
+        //ral = GetComponent<RayAndLineRenderer>();
         transform.GetComponent<MeshRenderer>().enabled = false;
+        pen.Radius = 0;
     }
     void Update()
     {
@@ -72,15 +76,21 @@ public class PenInputs : MonoBehaviour
             
         }
 
-        //Ǫ��
-if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+        //if (ral.isRayed)
         {
-            Debug.Log("Ctrl 키가 눌러져 있습니다. 상호 작용을 종료합니다.");
-                   }
-        else if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
-        {
-            Debug.Log("Alt 키가 눌러져 있습니다. 상호 작용을 시작합니다.");
-           
+         
+            if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+            {
+                Debug.Log("Ctrl 키가 눌러져 있습니다. 상호 작용을 종료합니다.");
+                
+
+            }
+            else if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
+            {
+                Debug.Log("Alt 키가 눌러져 있습니다. 상호 작용을 시작합니다.");
+                
+
+            }
         }
 
         //���� 1
@@ -121,8 +131,8 @@ if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
             transform.GetComponent<MeshRenderer>().enabled = true;
             //transform.position = SnapTransform.position + new Vector3(0,0,0);
-            transform.position = SnapTransform.position + -transform.up * 0.02f; 
-            
+            //transform.position = SnapTransform.position + -transform.up * 0.02f;
+            penPoint.position = SnapTransform.position;
         }
         else
         {
@@ -130,7 +140,7 @@ if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         }
 
         transform.rotation = Quaternion.LookRotation(-SnapTransform.forward, SnapTransform.up);
-        transform.rotation *= Quaternion.Euler(0, 100, 60);
+        transform.rotation *= Quaternion.Euler(0, 100, 30);
 
     }
 }

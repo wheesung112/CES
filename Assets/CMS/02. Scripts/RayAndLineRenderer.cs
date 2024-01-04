@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class RayAndLineRenderer : MonoBehaviour
 {
+    public Transform parentTarget;
     public Transform targetObject;
     public float rayLength = 10f;
-
+    public Color startColor = Color.red;
+    public Color endColor = Color.green;
     private LineRenderer lineRenderer;
 
+    public bool isRayed;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +26,16 @@ public class RayAndLineRenderer : MonoBehaviour
         lineRenderer.positionCount = 2;
         lineRenderer.startWidth = 0.02f;
         lineRenderer.endWidth = 0.02f;
+        lineRenderer.startColor = startColor;
+        lineRenderer.endColor = endColor;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         // 카메라에서 특정 오브젝트로 Ray를 쏘기
-        Ray ray = new Ray(targetObject.position, targetObject.forward);
+        Ray ray = new Ray(targetObject.position, parentTarget.TransformDirection(-Vector3.up));
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, rayLength))
@@ -42,9 +48,13 @@ public class RayAndLineRenderer : MonoBehaviour
             lineRenderer.SetPosition(1, hitPoint);
 
             // 여기에서 추가적인 작업을 수행할 수 있습니다.
+            lineRenderer.startColor = Color.white;
+            lineRenderer.endColor = Color.white;
+            isRayed = true;
         }
         else
         {
+            isRayed = false;
             // Ray에 충돌하지 않은 경우
             Vector3 endPoint = ray.origin + ray.direction * rayLength;
 
@@ -52,6 +62,10 @@ public class RayAndLineRenderer : MonoBehaviour
             lineRenderer.SetPosition(0, ray.origin);
             lineRenderer.SetPosition(1, endPoint);
 
+
+            lineRenderer.startColor = startColor;
+            lineRenderer.endColor = endColor;
+            //lineRenderer.material.color = startColor;
             // 여기에서 추가적인 작업을 수행할 수 있습니다.
         }
     }

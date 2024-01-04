@@ -124,8 +124,10 @@ public class TodayTime : MonoBehaviour
             // 날씨 정보 출력
             temper.text = weatherInfo.main.temp.ToString("0.0") + "°C";
 
-            // 도시의 시간대 정보 가져오기
-            TimeZoneInfo cityTimeZone = TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles");
+
+            TimeZoneInfo cityTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+            //TimeZoneInfo cityTimeZone = TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles");
 
             // UTC 시간을 도시의 시간대로 변환
             DateTime cityLocalTime = DateTime.UtcNow.AddSeconds(weatherInfo.timezone).Add(cityTimeZone.GetUtcOffset(DateTime.UtcNow));
