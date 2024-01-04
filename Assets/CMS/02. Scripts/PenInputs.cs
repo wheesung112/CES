@@ -4,6 +4,7 @@ using PaintIn3D;
 using UnityEngine;
 
 
+
 public class PenInputs : MonoBehaviour
 {
     
@@ -13,8 +14,8 @@ public class PenInputs : MonoBehaviour
     bool isGrabed1 = false;
     bool isGrabed2 = false;
     bool isGrabed3 = false;
-
-   
+    
+    
     private void Start()
     {
         transform.GetComponent<MeshRenderer>().enabled = false;
@@ -71,56 +72,56 @@ public class PenInputs : MonoBehaviour
             
         }
 
-        //г╙╫ц
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+        //г╙О©╫О©╫
+if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
-            Debug.Log("Ctrl е╟╟║ ╢╜╦╟ ╩Себют╢о╢ы.");
-           
-        }
-        else  if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
+            Debug.Log("Ctrl М┌╓Й╟─ К┬▄К÷╛Л═╦ Л·┬Л┼╣К▀┬К▀╓. Л┐│М≤╦ Л·▒Л ╘Л²└ Л╒┘Кё▄М∙╘К▀┬К▀╓.");
+                   }
+        else if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
         {
-            Debug.Log("Ctrl е╟╟║ ╢╜╦╟ ╩Себ©║╪╜ Alt е╟╟║ ╤╪╬НаЬ ╩Себют╢о╢ы.");
+            Debug.Log("Alt М┌╓Й╟─ К┬▄К÷╛Л═╦ Л·┬Л┼╣К▀┬К▀╓. Л┐│М≤╦ Л·▒Л ╘Л²└ Л▀°Л·▒М∙╘К▀┬К▀╓.");
            
         }
 
-        //╪╬╪╜ 1
-        if (Input.GetKey(KeyCode.P))
+        //О©╫О©╫О©╫О©╫ 1
+        if (Input.GetKey(KeyCode.J))
         {
-            Debug.Log("P е╟╟║ ╢╜╦╟ ╩Себют╢о╢ы.");
+            Debug.Log("P е╟О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫.");
             isGrabed1 = true;
         }
-        else if (Input.GetKey(KeyCode.L))
+        else if (Input.GetKey(KeyCode.I))
         {
-            Debug.Log("P е╟╟║ ╢╜╦╟ ╩Себ©║╪╜ L е╟╟║ ╤╪╬НаЬ ╩Себют╢о╢ы.");
+            Debug.Log("P е╟О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫б©О©╫О©╫О©╫ L е╟О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫.");
             isGrabed1 = false;
         }
-        //╪╬╪╜ 2
-        if (Input.GetKey(KeyCode.O))
+        //О©╫О©╫О©╫О©╫ 2
+        if (Input.GetKey(KeyCode.K))
         {
-            Debug.Log("O е╟╟║ ╢╜╦╟ ╩Себют╢о╢ы.");
+            Debug.Log("O е╟О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫.");
             isGrabed2 = true;
         }
-        else  if (Input.GetKey(KeyCode.K))
+        else  if (Input.GetKey(KeyCode.O))
         {
-            Debug.Log("O е╟╟║ ╢╜╦╟ ╩Себ©║╪╜ K е╟╟║ ╤╪╬НаЬ ╩Себют╢о╢ы.");
+            Debug.Log("O е╟О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫б©О©╫О©╫О©╫ K е╟О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫.");
             isGrabed2 = false;
         }
-        //╪╬╪╜ 3
-        if (Input.GetKey(KeyCode.I))
+        //О©╫О©╫О©╫О©╫ 3
+        if (Input.GetKey(KeyCode.L))
         {
-            Debug.Log("I е╟╟║ ╢╜╦╟ ╩Себют╢о╢ы.");
+            Debug.Log("I е╟О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫.");
             isGrabed3 = true;
         }
-        else if (Input.GetKey(KeyCode.J))
+        else if (Input.GetKey(KeyCode.P))
         {
-            Debug.Log("L е╟╟║ ╢╜╦╟ ╩Себ©║╪╜ J е╟╟║ ╤╪╬НаЬ ╩Себют╢о╢ы.");
+            Debug.Log("L е╟О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫б©О©╫О©╫О©╫ J е╟О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫.");
             isGrabed3 = false;
         }
 
         if(isGrabed1 || isGrabed2 || isGrabed3)
         {
             transform.GetComponent<MeshRenderer>().enabled = true;
-            transform.position = SnapTransform.position + new Vector3(0,0,0);
+            //transform.position = SnapTransform.position + new Vector3(0,0,0);
+            transform.position = SnapTransform.position + -transform.up * 0.02f; 
             
         }
         else
@@ -129,7 +130,7 @@ public class PenInputs : MonoBehaviour
         }
 
         transform.rotation = Quaternion.LookRotation(-SnapTransform.forward, SnapTransform.up);
-        transform.rotation *= Quaternion.Euler(0, 100, 180);
+        transform.rotation *= Quaternion.Euler(0, 100, 60);
 
     }
 }

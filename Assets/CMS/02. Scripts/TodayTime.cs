@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using TMPro;
+
 [System.Serializable]
 public class OWM_Coord
 {
@@ -71,10 +73,14 @@ public class WeatherData
     public int cod;
 
 }
+
 public class TodayTime : MonoBehaviour
 {
     public string APP_ID = "88f8043861127489ed60058666eb1853";
     public WeatherData weatherInfo;
+
+    public TMP_Text temper;
+    public TMP_Text times;
 
     // Start is called before the first frame update
     void Start()
@@ -96,10 +102,16 @@ public class TodayTime : MonoBehaviour
     IEnumerator GetWeather(string city)
     {
         city = UnityWebRequest.EscapeURL(city);
-        string url = "https://api.openweathermap.org/data/2.5/weather?q="+city+ "&units=metric&appid=88f8043861127489ed60058666eb1853";
+        string url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=88f8043861127489ed60058666eb1853";
 
         UnityWebRequest www = UnityWebRequest.Get(url);
         yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Failed to retrieve weather data. Error: " + www.error);
+            yield break;
+        }
 
         string json = www.downloadHandler.text;
         json = json.Replace("\"base\":", "\"basem\":");
@@ -109,21 +121,19 @@ public class TodayTime : MonoBehaviour
         {
             print(weatherInfo.weather[0].main);
 
-            // ¿øÇÏ´Â Áö¿ªÀÇ ½Ã°£´ë Á¤º¸ °¡Á®¿À±â (Las Vegas´Â Pacific ½Ã°£´ë »ç¿ë)
-            TimeZoneInfo lasVegasTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-            //TimeZoneInfo lasVegasTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time");
+            // ë‚ ì”¨ ì •ë³´ ì¶œë ¥
+            temper.text = weatherInfo.main.temp.ToString("0.0") + "Â°C";
 
-            // ÇöÀç UTC ½Ã°£À» °¡Á®¿À±â
-            DateTime utcNow = DateTime.UtcNow;
+            // ë„ì‹œì˜ ì‹œê°„ëŒ€ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
+            TimeZoneInfo cityTimeZone = TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles");
 
-            // UTC ½Ã°£À» Áö¿ª ½Ã°£´ë·Î º¯È¯
-            DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, lasVegasTimeZone);
-            print(localTime);
-            
+            // UTC ì‹œê°„ì„ ë„ì‹œì˜ ì‹œê°„ëŒ€ë¡œ ë³€í™˜
+            DateTime cityLocalTime = DateTime.UtcNow.AddSeconds(weatherInfo.timezone).Add(cityTimeZone.GetUtcOffset(DateTime.UtcNow));
+            print(cityLocalTime);
+
+            // ì‹œê°„ ì¶œë ¥
+            //times.text = "Local Time: " + cityLocalTime.ToString("yyyy-MM-dd HH:mm:ss");
+            times.text = cityLocalTime.ToString("hh:mm tt");
         }
-
     }
 }
-
-
-
