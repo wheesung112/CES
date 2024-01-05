@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class AttachObject : MonoBehaviour
 {
+    public GameObject hand;
+    bool checkSelect = false;
     private bool isAttached = false;
     bool isFloored = false;
-
+    bool isHovered = false;
     public void setFloored(bool floor)
     {
         isFloored = floor;
@@ -41,10 +43,10 @@ public class AttachObject : MonoBehaviour
                 else
                     targetPosition.z += 0.001f;
 
-                // È¸Àü °ª °¡Á®¿À±â
+                // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 //Quaternion targetRotation = Quaternion.LookRotation(hit.normal);
 
-                // ÀÌµ¿ ¹× È¸Àü Àû¿ë
+                // ï¿½Ìµï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 transform.position = targetPosition;
                 //transform.rotation = targetRotation;
 
@@ -70,10 +72,10 @@ public class AttachObject : MonoBehaviour
                 else
                     targetPosition.z += 0.001f;
 
-                // È¸Àü °ª °¡Á®¿À±â
+                // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 //Quaternion targetRotation = Quaternion.LookRotation(hit.normal);
 
-                // ÀÌµ¿ ¹× È¸Àü Àû¿ë
+                // ï¿½Ìµï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 transform.position = targetPosition;
                 //transform.rotation = targetRotation;
 
@@ -81,7 +83,32 @@ public class AttachObject : MonoBehaviour
             }
         }
     }
+    
+    void Update(){
+        if(isHovered){
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                checkSelect = true;
+                // Code to execute when Left Control key is held down
+            }
+        }
+        if(checkSelect){
+            transform.position = hand.transform.position;
+            if (Input.GetKey(KeyCode.LeftAlt))
+            {
+                isAttached = false;
+                checkSelect = false;
+            }
+        }
+    
+    }
 
+    public void Hovered(){
+        isHovered = true;
+    }
+    public void HoverCancle(){
+        isHovered = false;
+    }
     public void SelectExited()
     {
         isAttached = false;

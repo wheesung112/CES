@@ -80,18 +80,18 @@ public class PenInputs : MonoBehaviour
         //if (ral.isRayed)
         {
          
-            if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-            {
-                Debug.Log("Ctrl 키가 눌러져 있습니다. 상호 작용을 종료합니다.");
+            // if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+            // {
+            //     Debug.Log("Ctrl 키가 눌러져 있습니다. 상호 작용을 종료합니다.");
                 
 
-            }
-            else if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
-            {
-                Debug.Log("Alt 키가 눌러져 있습니다. 상호 작용을 시작합니다.");
+            // }
+            // else if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
+            // {
+            //     Debug.Log("Alt 키가 눌러져 있습니다. 상호 작용을 시작합니다.");
                 
 
-            }
+            // }
         }
 
         //���� 1

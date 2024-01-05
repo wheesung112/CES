@@ -1422,7 +1422,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "e4e7d050-74ad-49a0-9853-cfa9365e2c9a",
+                    "id": "1fa3aa99-cbd0-4343-b234-886a4414b84e",
                     "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
@@ -1435,6 +1435,17 @@
                     "name": "",
                     "id": "fa59aed1-ae0b-4074-a58c-294b85f46228",
                     "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Activate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee18c310-fde1-4330-935c-445ed122eb5d",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
@@ -1478,7 +1489,7 @@
                 {
                     "name": "",
                     "id": "65ec7391-092f-4bbf-b87c-7b0b8b64fecc",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Keyboard>/alt",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
