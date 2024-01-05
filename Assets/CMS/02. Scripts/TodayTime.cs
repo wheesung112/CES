@@ -135,7 +135,13 @@ public class TodayTime : MonoBehaviour
 
             // 시간 출력
             //times.text = "Local Time: " + cityLocalTime.ToString("yyyy-MM-dd HH:mm:ss");
-            times.text = cityLocalTime.ToString("hh:mm tt");
+            string bufTime = cityLocalTime.ToString("hh:mm tt");
+
+            if (bufTime.Contains("오후")) bufTime = bufTime.Replace("오후", "PM");
+            else if (bufTime.Contains("오전")) bufTime= bufTime.Replace("오전", "AM");
+            
+            times.text = bufTime;
+            
         }
     }
 }

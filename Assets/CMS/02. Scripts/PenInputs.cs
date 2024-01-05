@@ -12,6 +12,7 @@ public class PenInputs : MonoBehaviour
     public Transform SnapTransform;
     public Transform RightHand;
     public Transform penPoint;
+    public Transform rayPoint;
     bool isGrabed1 = false;
     bool isGrabed2 = false;
     bool isGrabed3 = false;
@@ -141,6 +142,6 @@ public class PenInputs : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation(-SnapTransform.forward, SnapTransform.up);
         transform.rotation *= Quaternion.Euler(0, 100, 30);
-
+        
     }
 }
