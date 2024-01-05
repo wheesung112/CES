@@ -33,47 +33,47 @@ public class PenInputs : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.Alpha1))
         {
-            pen.Radius = 0.003f;
+            pen.Radius = 0.003f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
-            pen.Radius = 0.005f;
+            pen.Radius = 0.005f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha3))
         {
-            pen.Radius = 0.008f;
+            pen.Radius = 0.008f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha4))
         {
-            pen.Radius = 0.010f;
+            pen.Radius = 0.010f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha5))
         {
-            pen.Radius = 0.013f;
+            pen.Radius = 0.013f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha6))
         {
-            pen.Radius = 0.016f;
+            pen.Radius = 0.016f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha7))
         {
-            pen.Radius = 0.019f;
+            pen.Radius = 0.019f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha8))
         {
-            pen.Radius = 0.02f;
+            pen.Radius = 0.02f/5;
             
         }
         else if (Input.GetKey(KeyCode.Alpha9))
         {
-            pen.Radius = 0.025f;
+            pen.Radius = 0.025f/5;
             
         }
 

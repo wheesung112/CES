@@ -97,7 +97,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagey"))
         {
-            currentPosit.y += moveAmount;
+            currentPosit.y += moveAmount/4;
             PlayerPrefs.SetFloat("stagey", currentPosit.y);
             stage.transform.position = currentPosit;
         }
@@ -106,7 +106,7 @@ public class EditStatus : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("stagey"))
         {
-            currentPosit.y -= moveAmount;
+            currentPosit.y -= moveAmount/4;
             PlayerPrefs.SetFloat("stagey", currentPosit.y);
             stage.transform.position = currentPosit;
         }
