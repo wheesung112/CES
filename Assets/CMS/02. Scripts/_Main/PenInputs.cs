@@ -141,7 +141,7 @@ public class PenInputs : MonoBehaviour
         }
 
         transform.rotation = Quaternion.LookRotation(-SnapTransform.forward, SnapTransform.up);
-        transform.rotation *= Quaternion.Euler(0, 100, 30);
+        transform.rotation *= Quaternion.Euler(0, 100, 60);
         
     }
 }
