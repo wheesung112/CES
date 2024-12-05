@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+
 namespace Paroxe.PdfRenderer.Examples
 {
     public class PDFDocumentRenderToTextureExample : MonoBehaviour
@@ -10,7 +12,8 @@ namespace Paroxe.PdfRenderer.Examples
 
         void Start()
         {
-            PDFDocument pdfDocument = new PDFDocument(PDFBytesSupplierExample.PDFSampleByteArray, "");
+            //PDFDocument pdfDocument = new PDFDocument(PDFBytesSupplierExample.PDFSampleByteArray, "");
+            PDFDocument pdfDocument = new PDFDocument("Assets/CMS/06.Test/pdf-test.pdf");
 
             if (pdfDocument.IsValid)
             {
@@ -23,6 +26,7 @@ namespace Paroxe.PdfRenderer.Examples
                 tex.anisoLevel = 8;
 
                 GetComponent<MeshRenderer>().material.mainTexture = tex;
+                //GetComponent<PaintableMeshTexture>().material.mainTexture = tex;
             }
         }
 #endif
